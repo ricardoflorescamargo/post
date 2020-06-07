@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-us"><title>
+    Imagen Hiperespectral | 
+    
+    Ricardo Flores Camargo</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Se tiene un archivo con extensión “.bil”. Este archivo contiene una imagen de suelo arcilloso. Se adquirio esta imagen con una cámara hiperespectral en el rango del infrarrojo cercano de 900 a 1700 nm. Para abrir la imagen con [R], se tiene que descargar la libreria “hyperSpec” y con la función “read::ENVI()” se puede abrir está imagen.
+    ">
+
+
+<meta property="og:title" content="Imagen hiperespectral" />
+<meta property="og:description" content="Se tiene un archivo con extensión “.bil”. Este archivo contiene una imagen de suelo arcilloso. Se adquirio esta imagen con una cámara hiperespectral en el rango del infrarrojo cercano de 900 a 1700 nm. Para abrir la imagen con [R], se tiene que descargar la libreria “hyperSpec” y con la función “read::ENVI()” se puede abrir está imagen." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/2020-06-07-/" />
+<meta property="article:published_time" content="2020-06-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-07T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Imagen hiperespectral"/>
+<meta name="twitter:description" content="Se tiene un archivo con extensión “.bil”. Este archivo contiene una imagen de suelo arcilloso. Se adquirio esta imagen con una cámara hiperespectral en el rango del infrarrojo cercano de 900 a 1700 nm. Para abrir la imagen con [R], se tiene que descargar la libreria “hyperSpec” y con la función “read::ENVI()” se puede abrir está imagen."/>
+
+<meta itemprop="name" content="Imagen hiperespectral">
+<meta itemprop="description" content="Se tiene un archivo con extensión “.bil”. Este archivo contiene una imagen de suelo arcilloso. Se adquirio esta imagen con una cámara hiperespectral en el rango del infrarrojo cercano de 900 a 1700 nm. Para abrir la imagen con [R], se tiene que descargar la libreria “hyperSpec” y con la función “read::ENVI()” se puede abrir está imagen.">
+<meta itemprop="datePublished" content="2020-06-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="261">
+
+
+
+<meta itemprop="keywords" content="R Markdown,plot,regression," />
+<link rel="canonical" href="/post/2020-06-07-/" />
+
+<link rel="icon" type="image/png" href="image/favicon.ico">
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/bulma.min.css">
+
+
+
+
+
+<script src=/js/ramium.js></script>
+<link rel="stylesheet" href=/css/ramium.css>
+
+
+
+
+
+<body><nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href=/>
+      
+      <strong>Ricardo Flores Camargo </strong>
+      
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      
+      
+      <a class="navbar-item" href="/">Home</a>
+      
+      
+      
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">This Blog</a>
+        <div class="navbar-dropdown">
+          
+          <a class="navbar-item" href="/tags/">All Tags</a>
+          
+          <a class="navbar-item" href="/sections/">All Sections</a>
+          
+          <a class="navbar-item" href="/posts/">All Posts</a>
+          
+        </div>
+      </div>
+      
+      
+      
+      <a class="navbar-item" href="/author/">Author</a>
+      
+      
+    </div>
+
+    <div class="navbar-end">
+      
+      <a class="navbar-item navgithub" href="https://github.com/rafed/ramium/" target="_blank">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+      
+
+      
+    </div>
+  </div>
+</nav><div class="columns is-centered">
+        <div id="page-body" class="column is-7">
+
+<div class="content blog">
+    <h1 class="title">Imagen Hiperespectral</h1>
+
+    <div id="infobar" class="level is-mobile">
+        <div class="level-left">
+            
+            <div class="level-item">
+                <p class="subtitle info date">Jun 7, 2020
+                </p>
+            </div>
+            
+
+            <div class="level-item">
+                <p class="subtitle info">
+                    2 mins read
+                </p>
+            </div>
+        </div>
+        <div class="level-right is-hidden-touch">
+            <div class="tags">
+                
+                <a class="tag is-dark is-rounded" href="/tags/r-markdown">R Markdown</a>
+                
+                <a class="tag is-dark is-rounded" href="/tags/plot">Plot</a>
+                
+                <a class="tag is-dark is-rounded" href="/tags/regression">Regression</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="tags is-hidden-desktop">
+        
+        <a class="tag is-dark is-rounded" href="/tags/r-markdown">R markdown</a>
+        
+        <a class="tag is-dark is-rounded" href="/tags/plot">Plot</a>
+        
+        <a class="tag is-dark is-rounded" href="/tags/regression">Regression</a>
+        
+    </div>
+
+    <div class="blog-text">
+        
+
+        
+
+
+<p>Se tiene un archivo con extensión “.bil”. Este archivo contiene una imagen de suelo arcilloso. Se adquirio esta imagen con una cámara hiperespectral en el rango del infrarrojo cercano de 900 a 1700 nm. Para abrir la imagen con [R], se tiene que descargar la libreria “hyperSpec” y con la función “read::ENVI()” se puede abrir está imagen.</p>
+<pre class="r"><code>dir&lt;-&quot;C:\\Users\\USUARIO\\Desktop\\suelos_crudo\\Arc_lim_00_200.bil&quot;
+library(hyperSpec)
+## Loading required package: lattice
+## Loading required package: grid
+## Loading required package: ggplot2
+## Loading required package: xml2
+## Package hyperSpec, version 0.99-20200527
+## 
+## To get started, try
+##    vignette (&quot;hyperspec&quot;)
+##    package?hyperSpec 
+##    vignette (package = &quot;hyperSpec&quot;)
+## 
+## If you use this package please cite it appropriately.
+##    citation(&quot;hyperSpec&quot;)
+## will give you the correct reference.
+## 
+## The project homepage is http://hyperspec.r-forge.r-project.org
+resonon=hyperSpec::read.ENVI(dir)
+## .find.ENVI.header: Guessing header file name C:/Users/USUARIO/Desktop/suelos_crudo/Arc_lim_00_200.bil.hdr</code></pre>
+<pre class="r"><code>res2=as.matrix(resonon,byrrow=T)
+dim(res2)
+## [1] 40000   168
+A=res2
+rw=nrow(A);cl=ncol(A);mx=max(A);mi=min(A)
+A_nor1=array(0,c(rw,cl))
+for (i in 1:rw) {
+  for (j in 1:cl){
+    A_nor1[i,j]=A[i,j]/mx
+  }
+}
+as&lt;-array(A_nor1[,100],c(200,200))
+library(fields)
+## Loading required package: spam
+## Loading required package: dotCall64
+## Spam version 2.5-1 (2019-12-12) is loaded.
+## Type &#39;help( Spam)&#39; or &#39;demo( spam)&#39; for a short introduction 
+## and overview of this package.
+## Help for individual functions is also obtained by adding the
+## suffix &#39;.spam&#39; to the function name, e.g. &#39;help( chol.spam)&#39;.
+## 
+## Attaching package: &#39;spam&#39;
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     backsolve, forwardsolve
+## Loading required package: maps
+## See https://github.com/NCAR/Fields for
+##  an extensive vignette, other supplements and source code</code></pre>
+<pre class="r"><code>image.plot(as,main=&quot;Imagen Hiperespectral&quot;,axes=F)</code></pre>
+<div class="figure"><span id="fig:pie"></span>
+<img src="//post/2020-06-07-_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
+<p class="caption">
+Figure 1: A fancy pie chart.
+</p>
+</div>
+<p>este dato es de</p>
+<pre class="r"><code>plot(c(1:50))</code></pre>
+<p><img src="//post/2020-06-07-_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+
+    </div>
+</div><div id="social-media-share" class="has-text-centered">
+	<p><i>Sharing is caring!</i></p>
+	<br>
+	
+	<div class="share-buttons">
+	    <a  href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2f2020-06-07-%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Facebook. Opens in a new window.">
+	        <img src=/img/icons/45px/facebook.png>
+	    </a>
+
+	    <a  href="https://twitter.com/intent/tweet?text=Imagen%20hiperespectral&url=%2fpost%2f2020-06-07-%2f"
+	        onclick="socialMediaPopUp(this.href, '', 500, 500); return false;"
+	        title="Share on Twitter. Opens in a new window." >
+	        <img src=/img/icons/45px/twitter.png>
+	    </a>
+
+		<a  href="http://www.reddit.com/submit?url=%2fpost%2f2020-06-07-%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Reddit. Opens in a new window." >
+	        <img src=/img/icons/45px/reddit.png>
+	    </a>
+
+	    <a  href="http://pinterest.com/pin/create/button/?url=%2fpost%2f2020-06-07-%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Pinterest. Opens in a new window." >
+	        <img src=/img/icons/45px/pinterest.png>
+	    </a>
+
+	    <a  href="http://www.tumblr.com/share/link?url=%2fpost%2f2020-06-07-%2f"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on Tumblr. Opens in a new window." >
+	        <img src=/img/icons/45px/tumblr.png>
+	    </a>
+
+		<a  href="https://www.linkedin.com/shareArticle?mini=true&url=%2fpost%2f2020-06-07-%2f
+			&title=Imagen%20hiperespectral&summary=Se%20tiene%20un%20archivo%20con%20extensi%c3%b3n%20%e2%80%9c.bil%e2%80%9d.%20Este%20archivo%20contiene%20una%20imagen%20de%20suelo%20arcilloso.%20Se%20adquirio%20esta%20imagen%20con%20una%20c%c3%a1mara%20hiperespectral%20en%20el%20rango%20del%20infrarrojo%20cercano%20de%20900%20a%201700%20nm.%20Para%20abrir%20la%20imagen%20con%20%5bR%5d%2c%20se%20tiene%20que%20descargar%20la%20libreria%20%e2%80%9chyperSpec%e2%80%9d%20y%20con%20la%20funci%c3%b3n%20%e2%80%9cread%3a%3aENVI%28%29%e2%80%9d%20se%20puede%20abrir%20est%c3%a1%20imagen.&source=rafed123.github.io"
+	        onclick="socialMediaPopUp(this.href, '', 900, 500); return false;"
+	        title="Share on LinkedIn. Opens in a new window." >
+	        <img src=/img/icons/45px/linkedin.png>
+	    </a>
+
+	    <a  href="mailto:?subject=Imagen%20hiperespectral&amp;body=Check out this site %2fpost%2f2020-06-07-%2f"
+	        title="Share via Email. Opens in a new window." >
+	        <img src=/img/icons/45px/mail.png>
+	    </a>
+	</div>
+</div>
+
+
+<br>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+        </div>
+    </div>
+
+<footer class="footer has-background-dark">
+    <div class="content has-text-centered has-text-white">
+        <p>
+            © 2020 Ramium. Powered by
+            <a class="has-text-light" href="https://github.com/gohugoio/hugo" target="_blank">
+            Hugo</a>. Theme
+            <a class="has-text-light" href="https://github.com/rafed123/ramium/" target="_blank">
+                Ramium.
+            </a>
+        </p>
+    </div>
+</footer>
+</body>
+
+</html>

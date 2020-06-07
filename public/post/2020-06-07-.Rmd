@@ -1,0 +1,53 @@
+---
+title: 'Imagen hiperespectral'
+author: Ricardo Flores Camargo
+date: '2020-06-07'
+slug: ''
+categories:
+  - R
+tags: ["R Markdown", "plot", "regression"]
+---
+
+Se tiene un archivo con extensión ".bil". Este archivo contiene una imagen de suelo arcilloso. Se adquirio esta imagen con una cámara hiperespectral en el rango del infrarrojo cercano de 900 a 1700 nm. Para abrir la imagen con [R], se tiene que descargar la libreria "hyperSpec" y con la función "read::ENVI()" se puede abrir está imagen. 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+
+```{r eval=T}
+dir<-"C:\\Users\\USUARIO\\Desktop\\suelos_crudo\\Arc_lim_00_200.bil"
+library(hyperSpec)
+resonon=hyperSpec::read.ENVI(dir)
+```
+
+
+
+```{r eval=T}
+res2=as.matrix(resonon,byrrow=T)
+dim(res2)
+A=res2
+rw=nrow(A);cl=ncol(A);mx=max(A);mi=min(A)
+A_nor1=array(0,c(rw,cl))
+for (i in 1:rw) {
+  for (j in 1:cl){
+    A_nor1[i,j]=A[i,j]/mx
+  }
+}
+as<-array(A_nor1[,100],c(200,200))
+library(fields)
+```
+
+```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
+image.plot(as,main="Imagen Hiperespectral",axes=F)
+```
+
+este dato es de 
+
+
+
+```{r eval=T}
+plot(c(1:50))
+```
+
+
